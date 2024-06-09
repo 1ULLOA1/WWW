@@ -8,9 +8,11 @@ npm install express ejs body-parser multer sequelize sqlite3
 mkdir public public/css views uploads
 touch public/css/styles.css views/index.ejs views/report.ejs views/reports.ejs views/resources.ejs views/contact.ejs app.js
 mkdir models
+
 touch models/index.js
 const { Sequelize, DataTypes } = require('sequelize');
 const sequelize = new Sequelize({
+
   dialect: 'sqlite',
   
   storage: 'database.sqlite'
