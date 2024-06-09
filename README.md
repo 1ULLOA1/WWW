@@ -3,6 +3,7 @@ cd anti-estafas
 
 npm init -y
 
+
 npm install express ejs body-parser multer sequelize sqlite3
 mkdir public public/css views uploads
 touch public/css/styles.css views/index.ejs views/report.ejs views/reports.ejs views/resources.ejs views/contact.ejs app.js
@@ -11,6 +12,7 @@ touch models/index.js
 const { Sequelize, DataTypes } = require('sequelize');
 const sequelize = new Sequelize({
   dialect: 'sqlite',
+  
   storage: 'database.sqlite'
 });
 
@@ -19,27 +21,33 @@ const Report = sequelize.define('Report', {
     type: DataTypes.STRING,
     allowNull: true
   },
+  
   email: {
     type: DataTypes.STRING,
     allowNull: true
   },
   titulo: {
+  
     type: DataTypes.STRING,
     allowNull: false
   },
   descripcion: {
+  
     type: DataTypes.TEXT,
     allowNull: false
   },
   fecha: {
+  
     type: DataTypes.DATE,
     allowNull: true
   },
   cantidad: {
+  
     type: DataTypes.FLOAT,
     allowNull: true
   },
   archivo: {
+  
     type: DataTypes.STRING,
     allowNull: true
   }
